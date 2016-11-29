@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @house.name %>
+</p>
+
+<p>
+  <strong>Mts:</strong>
+  <%= @house.mts %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @house.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @house.price %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @house.region %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @house.photo %>
+</p>
+
+<p>
+  <strong>Fav:</strong>
+  <%= @house.fav %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @house.user %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @house.company %>
+</p>
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Back', houses_path %>

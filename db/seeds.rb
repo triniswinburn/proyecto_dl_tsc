@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# CREAR SEEDS PARA:
+# company (1)
+# company_admin (1)
+# company_user (4)
+# logged_user (4)
+# users
+# houses (16)
