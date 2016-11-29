@@ -1,3 +1,6 @@
 class User < ApplicationRecord
-  belongs_to :fav
+  has_many :favs
+  has_many :houses
+  has_many :companies
+  has_many :quotations
 end

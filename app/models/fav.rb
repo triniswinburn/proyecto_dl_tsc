@@ -1,4 +1,4 @@
 class Fav < ApplicationRecord
-  belongs_to :user
-  belongs_to :house
+  has_many :user
+  has_many :house
 end
