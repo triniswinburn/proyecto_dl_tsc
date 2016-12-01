@@ -13,3 +13,4 @@
 # logged_user (4)
 # users
 # houses (16)
+AdminUser.create!(email: 'trini.swinburn@gmail.com', password: '12345678', password_confirmation: '12345678')
