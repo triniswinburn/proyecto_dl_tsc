@@ -34,5 +34,5 @@ ActiveAdmin.register User do
 			input :password
 		end
 	end
-	
+	µ
 end
