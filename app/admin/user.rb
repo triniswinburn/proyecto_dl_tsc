@@ -13,6 +13,7 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
+permit_params :email, :password, :name
 
 	index do
 		 column :id
@@ -33,6 +34,6 @@ ActiveAdmin.register User do
 			input :email
 			input :password
 		end
+		actions
 	end
-	µ
 end
