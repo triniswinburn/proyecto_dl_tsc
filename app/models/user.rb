@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :houses
   has_many :companies
   has_many :quotations
+
+# revisar si lo siguiente esta bien
+  has_many :quotations, :as => :seller
 end
