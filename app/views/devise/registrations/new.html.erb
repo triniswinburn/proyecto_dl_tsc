@@ -4,14 +4,29 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.label :name, 'Nombre' %><br />
+    <%= f.text_field :name, autofocus: true %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :email, 'Email' %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone, 'Teléfono (solo números)' %><br />
+    <%= f.text_field :phone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo, 'Fotografía' %><br />
+    <%= f.text_field :photo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, 'Contraseña' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> mínimo 6 caracteres)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
   </div>
