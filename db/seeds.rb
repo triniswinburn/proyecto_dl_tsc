@@ -76,6 +76,18 @@ housesize = HouseSize.create!(
 )
 
 
+housevalue = HouseValue.create!(
+	[
+	{from: 1, to: 400, name: "Hasta UF 400"},
+	{from: 401, to: 600, name: "Entre UF 401 y UF 600"},
+	{from: 601, to: 800, name: "Entre UF 601 y UF 800"},
+	{from: 801, to: 1000, name: "Entre UF 801 y UF 1.000"},
+	{from: 1001, to: 2000, name: "Entre UF 1.001 y UF 2.000"},
+	{from: 2001, to: 4000, name: "Más de UF 2.000"},
+	]
+)
+
+
 houses = House.create!(
 	[
 		{name: "casa1", mts: "24mt2", user: users.first, company: companies.first, region: regions.first },

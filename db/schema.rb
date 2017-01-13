@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170113215331) do
+ActiveRecord::Schema.define(version: 20170113222718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,14 @@ ActiveRecord::Schema.define(version: 20170113215331) do
     t.string   "name"
   end
 
+  create_table "house_values", force: :cascade do |t|
+    t.integer  "from"
+    t.integer  "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
   create_table "houses", force: :cascade do |t|
     t.string   "name"
     t.integer  "mts"
@@ -84,12 +92,14 @@ ActiveRecord::Schema.define(version: 20170113215331) do
     t.boolean  "fav"
     t.integer  "user_id"
     t.integer  "company_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "region_id"
     t.integer  "house_size_id"
+    t.integer  "house_value_id"
     t.index ["company_id"], name: "index_houses_on_company_id", using: :btree
     t.index ["house_size_id"], name: "index_houses_on_house_size_id", using: :btree
+    t.index ["house_value_id"], name: "index_houses_on_house_value_id", using: :btree
     t.index ["region_id"], name: "index_houses_on_region_id", using: :btree
     t.index ["user_id"], name: "index_houses_on_user_id", using: :btree
   end
@@ -137,6 +147,7 @@ ActiveRecord::Schema.define(version: 20170113215331) do
   add_foreign_key "favs", "users"
   add_foreign_key "houses", "companies"
   add_foreign_key "houses", "house_sizes"
+  add_foreign_key "houses", "house_values"
   add_foreign_key "houses", "regions"
   add_foreign_key "houses", "users"
   add_foreign_key "quotations", "houses"

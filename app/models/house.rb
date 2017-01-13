@@ -5,6 +5,7 @@ class House < ApplicationRecord
   has_many :favs
   has_many :quotations
   belongs_to :house_size
+  belongs_to :house_value
 
   # mount_uploader :photo, PhotoUploader
 end
