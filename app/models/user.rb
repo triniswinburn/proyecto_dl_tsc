@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :companies
   has_many :quotations
 
-# revisar si lo siguiente esta bien
-  has_many :quotations, :as => :seller
+  enum role: [:guest, :user, :seller, :admin]
+
 end

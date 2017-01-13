@@ -5,9 +5,9 @@ ActiveAdmin.register AdminUser do
     column :id
     column :email
     column :created_at
-    column :mi_columna do
-      "hola"
-    end
+    # column :mi_columna do
+    #   "hola"
+    # end
     actions
   end
 

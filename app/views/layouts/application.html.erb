@@ -1,79 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ProyectoDlTsc</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>ProyectoDlTsc</title>
+  <%= csrf_meta_tags %>
 
   <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  
+  <%= favicon_link_tag '/favicon.ico' %>
 
-<div class="container"> 
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<!-- <ul class="nav navbar-nav navbar-right">
- <% if user_signed_in? %>
- <li> <a href="<%= destroy_user_session_path %>" data-method='delete'>
- Salir
- </a></li>
- <% else %>
- <li><a href="<%= new_user_session_path %>"> Login </a></li>
- <li><a href="<%= new_user_registration_path %>"> Registro </a></li>
- <% end %>
-</ul> -->
+</head>
 
+<body>
+  <div class="container"> 
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#" style="margin:15px; height: 120px;">
+            <img alt="Brand" <%= image_tag 'logo.png' %>
+            <p style="font-size: 11.5px; margin-left: 8px; margin-top: 10px; color: lightgrey;"><i>Buscador de casas pre-fabricadas</i></p>
+          </a>
+        </div>
 
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <% if user_signed_in? %>
+              <li> <%= current_user.email %> </li>
+              <br>
+              <div>
+                <button type="button" class="btn btn-default"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
+              </div>
+              <% else %>
+              <div  class="btn-group" role="group" aria-label="..."style="margin: 45px;">
+                <button type="button" class="btn btn-default"><%= link_to "Mi Cuenta", new_user_registration_path %></button>
+                <span></span>
+                <button type="button" class="btn btn-default"><%= link_to "Registro", new_user_registration_path %></button>
+              </div>
+              <% end %>
+            </li> 
+          </ul>
+        </div>
 
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img alt="Brand" <%= image_tag 'logo.jpg' %>
-      </a>
-    </div>
+      </div><!-- /.container-fluid -->
+    </nav>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-        <% if user_signed_in? %>
-        <li> <%= current_user.email %> </li>
-        <br>
-          <%= link_to "Salir", destroy_user_session_path, method: :delete %>
-        <% else %>
-           <%= link_to "Ingresar", new_user_registration_path %>
-           <%= link_to "Registrar", new_user_registration_path %>
-        <% end %>
-        </li> 
-      </ul>
-    </div>
-
-
-  </div><!-- /.container-fluid -->
-</nav>
-
-  	<p class="notice"><%= notice %></p>
+    <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
-  </body>
-</div>
 
-  <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-</html>
+
+  </body>
+  </html>

@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-
+gem 'carrierwave'
 gem 'dotenv-rails', :groups => [:development, :test]
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
@@ -54,8 +54,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'cancancan'
 gem 'railroady'
-gem 'carrierwave'
 gem 'fog'
+gem "better_errors"
+gem "binding_of_caller"
 # gem 'dotenv-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

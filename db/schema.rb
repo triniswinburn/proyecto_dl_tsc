@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202234826) do
+ActiveRecord::Schema.define(version: 20170113202237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,19 +67,29 @@ ActiveRecord::Schema.define(version: 20161202234826) do
     t.index ["user_id"], name: "index_favs_on_user_id", using: :btree
   end
 
+  create_table "house_sizes", force: :cascade do |t|
+    t.integer  "from"
+    t.integer  "to"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "houses", force: :cascade do |t|
     t.string   "name"
     t.integer  "mts"
     t.string   "description"
     t.integer  "price"
-    t.integer  "region"
     t.string   "photo"
     t.boolean  "fav"
     t.integer  "user_id"
     t.integer  "company_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "region_id"
+    t.integer  "house_size_id"
     t.index ["company_id"], name: "index_houses_on_company_id", using: :btree
+    t.index ["house_size_id"], name: "index_houses_on_house_size_id", using: :btree
+    t.index ["region_id"], name: "index_houses_on_region_id", using: :btree
     t.index ["user_id"], name: "index_houses_on_user_id", using: :btree
   end
 
@@ -92,6 +102,12 @@ ActiveRecord::Schema.define(version: 20161202234826) do
     t.datetime "updated_at", null: false
     t.index ["house_id"], name: "index_quotations_on_house_id", using: :btree
     t.index ["user_id"], name: "index_quotations_on_user_id", using: :btree
+  end
+
+  create_table "regions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -110,6 +126,7 @@ ActiveRecord::Schema.define(version: 20161202234826) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.integer  "role"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -118,6 +135,8 @@ ActiveRecord::Schema.define(version: 20161202234826) do
   add_foreign_key "favs", "houses"
   add_foreign_key "favs", "users"
   add_foreign_key "houses", "companies"
+  add_foreign_key "houses", "house_sizes"
+  add_foreign_key "houses", "regions"
   add_foreign_key "houses", "users"
   add_foreign_key "quotations", "houses"
   add_foreign_key "quotations", "users"
