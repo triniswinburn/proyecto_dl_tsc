@@ -18,15 +18,12 @@
 <!-- FILTRO TAMAÑO -->
 <div class="btn-group">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Mts2 <span class="caret"></span>
+    Tamaño <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
-    <li><a href="#">Hasta 25 mts2</a></li>
-    <li><a href="#">25 a 40 mts2</a></li>
-    <li><a href="#">40 a 60 mts2</a></li>
-    <li><a href="#">60 a 80 mts2</a></li>
-    <li><a href="#">80 a 100 mts2</a></li>
-    <li><a href="#">Más de 100 mts2</a></li>
+  <% HouseSize.all.each do |house_size| %>
+      <li><a href="<%= root_path(house_size: house_size.id)%>"><%= house_size.name  %></a></li>
+    <% end %>
   </ul>
 </div>
 
@@ -56,11 +53,6 @@
     
   </ul>
 </div>
-
-
-<button type="button" class="btn btn-default btn-md">
-  <span class="glyphicon glyphicon-search" aria-hidden="true"></span> Buscar Casas
-</button>
 
 <br><br><br>
 

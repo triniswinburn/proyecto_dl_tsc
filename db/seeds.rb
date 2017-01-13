@@ -66,12 +66,12 @@ regions = Region.create!(
 
 housesize = HouseSize.create!(
 	[
-	{from: 1, to: 25},
-	{from: 26, to: 40},
-	{from: 41, to: 60},
-	{from: 61, to: 80},
-	{from: 80, to: 100},
-	{from: 101, to: 200},
+	{from: 1, to: 25, name: "Hasta 25 mts2"},
+	{from: 26, to: 40, name: "26 a 40 mts2"},
+	{from: 41, to: 60, name: "41 a 60 mts2"},
+	{from: 61, to: 80, name: "61 a 80 mts2"},
+	{from: 81, to: 100, name: "81 a 100 mts2"},
+	{from: 101, to: 200, name: "Más de 100 mts2"},
 	]
 )
 

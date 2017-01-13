@@ -13,6 +13,6 @@ ActiveAdmin.register House do
 #   permitted
 # end
 
-permit_params :email, :password, :name, :user, :company, :region, :mts, :description, :price, :photo, :fav
+permit_params :email, :password, :name, :user_id, :company_id, :region, :house_size_id, :mts, :description, :price, :photo, :fav
 
 end
