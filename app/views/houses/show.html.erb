@@ -22,7 +22,7 @@
 
 <p>
   <strong>Region:</strong>
-  <%= @house.region %>
+  <%= @house.region.name %>
 </p>
 
 <p>
@@ -30,10 +30,10 @@
   <%= @house.photo %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Fav:</strong>
   <%= @house.fav %>
-</p>
+</p> -->
 
 <!-- <p>
   <strong>User:</strong>
@@ -45,5 +45,10 @@
   <%= @house.company %>
 </p> -->
 
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>
+<% unless @quotation.any? %>
+<p><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default navbar-btn">Cotizar</button></a></p>
+
+<% end %>
+
+<!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
+<!--<%= link_to 'Back', houses_path %> -->

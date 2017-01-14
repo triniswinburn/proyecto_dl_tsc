@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p><h3>Listado de Cotizaciones</h1></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre Completo</th>
+      <th>Email</th>
+      <th>Teléfono</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @quotations.each do |quotation| %>
+      <tr>
+        <td><%= quotation.clientName %></td>
+        <td><%= quotation.clientEmail %></td>
+        <td><%= quotation.clientPhone %></td>
+        <td><%= quotation.clientMessaje %></td>
+
+        <td><%= link_to 'Show', quotation %></td>
+        <td><%= link_to 'Edit', edit_quotation_path(quotation) %></td>
+        <td><%= link_to 'Destroy', quotation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -7,7 +7,10 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  resources :houses
+  resources :houses do
+      resources :quotations
+    end
+    
   resources :companies
   resources :users
 

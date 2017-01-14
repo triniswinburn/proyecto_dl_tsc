@@ -21,7 +21,7 @@
     Tamaño <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
-  <% HouseSize.all.each do |house_size| %>
+    <% HouseSize.all.each do |house_size| %>
       <li><a href="<%= root_path(house_size: house_size.id)%>"><%= house_size.name  %></a></li>
     <% end %>
   </ul>
@@ -33,8 +33,9 @@
     Armado? <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
-    <li><a href="#">Si</a></li>
-    <li><a href="#">No</a></li>
+    <% HouseBuild.all.each do |house_build| %>
+      <li><a href="<%= root_path(house_build: house_build.id)%>"><%= house_build.name %></a></li>
+    <% end %>
   </ul>
 </div>
 
@@ -44,11 +45,14 @@
     Valor Aprox <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
-  <% HouseValue.all.each do |house_value| %>
+    <% HouseValue.all.each do |house_value| %>
       <li><a href="<%= root_path(house_value: house_value.id)%>"><%= house_value.name  %></a></li>
     <% end %>
   </ul>
 </div>
+
+<!-- BOTON BORRAR FILTROS -->
+<a href="<%= root_path%>"><button type="button" class="btn btn-default navbar-btn">Borrar Filtros</button></a>
 
 <br><br><br>
 

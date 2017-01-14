@@ -9,6 +9,10 @@ class PublicController < ApplicationController
   		@houses = @houses.where(house_size_id: params[:house_size])
   	end
 
+	if params[:house_build].present?
+  		@houses = @houses.where(house_build: params[:house_build])
+  	end
+
   	if params[:house_value].present?
   		@houses = @houses.where(house_value_id: params[:house_value])
   	end

@@ -11,6 +11,7 @@ class HousesController < ApplicationController
   # GET /houses/1.json
   def show
     @houses = House.all
+    @quotation = Quotation.where(user: current_user, house: @house)
   end
 
   # GET /houses/new
@@ -70,6 +71,6 @@ class HousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def house_params
-      params.require(:house).permit(:name, :mts, :description, :price, :region, :photo, :fav, :user_id, :company_id, :region_id, :house_size_id, :house_value_id)
+      params.require(:house).permit(:name, :mts, :description, :price, :region, :photo, :fav, :user_id, :company_id, :region_id, :house_size_id, :house_value_id, :house_build_id)
     end
 end

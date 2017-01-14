@@ -6,6 +6,7 @@ class House < ApplicationRecord
   has_many :quotations
   belongs_to :house_size
   belongs_to :house_value
+  belongs_to :house_build
 
   # mount_uploader :photo, PhotoUploader
 end

@@ -1,0 +1,40 @@
+<%= form_for([@house, @quotation]) do |f| %>
+  <% if @quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <% @quotation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_field :message %>
+  </div>
+<!-- 
+  <div class="field">
+    <%= f.label :user_id%>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :house_id %>
+    <%= f.text_field :house_id %>
+  </div>
+ -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
