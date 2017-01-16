@@ -27,7 +27,7 @@
 
 <p>
   <strong>Photo:</strong>
-  <%= @house.photo %>
+  <%= image_tag @house.photo %>
 </p>
 
 <!-- <p>
@@ -47,8 +47,10 @@
 
 <% unless @quotation.any? %>
 <p><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default navbar-btn">Cotizar</button></a></p>
-
 <% end %>
+
+<p><a href="<%= root_path (@house) %>"><button type="button" class="btn btn-default navbar-btn">Back</button></a></p>
+
 
 <!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
 <!--<%= link_to 'Back', houses_path %> -->

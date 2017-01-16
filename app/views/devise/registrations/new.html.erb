@@ -13,15 +13,23 @@
     <%= f.email_field :email %>
   </div>
 
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :phone, 'Teléfono (solo números)' %><br />
     <%= f.text_field :phone %>
-  </div>
+  </div> -->
 
-  <div class="field">
-    <%= f.label :photo, 'Fotografía' %><br />
+<!--   <div class="field">
+    <%= f.label :photo %>
     <%= f.text_field :photo %>
-  </div>
+  </div> -->
+  <!-- <br>
+  <%= form_for @user, html: { multipart: true } do |f| %>
+   <label>Foto</label>
+   <%= f.file_field :photo %>
+   <%= f.hidden_field :photo_cache %>
+   <%= image_tag(@user.photo) if @user.photo? %>
+  <% end %>
+  <br> -->
 
   <div class="field">
     <%= f.label :password, 'Contraseña' %>

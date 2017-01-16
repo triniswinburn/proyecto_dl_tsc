@@ -41,6 +41,15 @@
     <%= f.text_field :photo %>
   </div>
 
+  <%= form_for @house, html: { multipart: true } do |f| %>
+   <p>
+   <label>My Photo</label>
+   <%= f.file_field :photo %>
+   <%= f.hidden_field :photo_cache %>
+   <%= image_tag(@house.photo) if @house.photo? %>
+   </p>
+  <% end %>
+
   <div class="field">
     <%= f.label :fav %>
     <%= f.check_box :fav %>

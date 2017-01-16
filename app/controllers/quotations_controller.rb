@@ -11,7 +11,6 @@ class QuotationsController < ApplicationController
 	def new
 		@house = House.find params[:house_id]
 		@quotation = Quotation.new
-
 	end
 
 
@@ -76,6 +75,6 @@ class QuotationsController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def quotation_params
-		params.require(:quotation).permit(:name, )
+		params.require(:quotation).permit(:name, :subject, :message, :user_id, :house_id )
 	end
 end

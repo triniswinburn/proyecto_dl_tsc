@@ -61,7 +61,7 @@
     <% @houses.each do |house| %>
     <div class="col-sm-4 col-md-4">
       <div class="thumbnail">
-        <%= image_tag house.photo ||'casa1.jpg' %>
+        <%= image_tag house.photo %>
         <div class="caption">
           <h3> <%= house.name %> </h3>
           <p><h5><%= house.description %></h5></p>
@@ -73,5 +73,3 @@
     <% end %>
     </div>
 </div>
-
-

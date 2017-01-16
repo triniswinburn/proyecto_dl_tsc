@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
   enum role: [:guest, :user, :seller, :admin]
 
+  mount_uploader :photo, PhotoUploader
+
 end

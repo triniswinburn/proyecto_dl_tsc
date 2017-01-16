@@ -26,7 +26,7 @@
         <td><%= house.description %></td>
         <td><%= house.price %></td>
         <td><%= house.region %></td>
-        <td><%= house.photo %></td>
+        <td><%= image_tag(@house.photo) if @house.photo? %></td>
         <td><%= house.fav %></td>
         <!-- <td><%= house.user %></td>
         <td><%= house.company %></td> -->
