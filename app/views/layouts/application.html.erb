@@ -9,8 +9,6 @@
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  
-  <%= favicon_link_tag '/favicon.ico' %>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -39,7 +37,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <% if user_signed_in? %>
-              <li style="font-family: 'News Cycle', sans-serif; font-size: 15px; margin-top: 25px; margin-bottom: 25px; margin-right: 20px;"><%= current_user.email %> </li>
+              <li class="text"><%= current_user.email %> </li>
               <br>
               <div style="margin-right: -50px;">
                 <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; margin-right: 20px;"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>

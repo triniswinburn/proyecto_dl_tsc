@@ -30,9 +30,9 @@
         <td><%= house.fav %></td>
         <!-- <td><%= house.user %></td>
         <td><%= house.company %></td> -->
-        <td><%= link_to 'Show', house %></td>
-        <td><%= link_to 'Edit', edit_house_path(house) %></td>
-        <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text-actions"><%= link_to 'Mostrar', house %></td>
+        <td class="text-actions"><%= link_to 'Editar', edit_house_path(house) %></td>
+        <td class="text-actions"><%= link_to 'Borrar', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

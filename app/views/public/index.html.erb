@@ -1,76 +1,76 @@
 <br>
 
-<h1 style="font-family: 'News Cycle', sans-serif;">Casas Pre-fabricadas</h1>
+<h1>Casas Pre-fabricadas</h1>
 <p style="font-family: 'News Cycle', sans-serif; font-size: 17px;">Utiliza los filtros para definir la casa prefabricada que andas buscando</p>
 
 <!-- FILTRO REGION -->
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'News Cycle', sans-serif; font-size: 18px;">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
     Región <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
     <% Region.all.each do |region| %>
-      <li><a href="<%= root_path(region: region.id)%>"><%= region.name  %></a></li>
+    <li><a href="<%= root_path(region: region.id)%>"><%= region.name  %></a></li>
     <% end %>  
   </ul>
 </div>
 
 <!-- FILTRO TAMAÑO -->
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'News Cycle', sans-serif; font-size: 18px;">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
     Tamaño <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
     <% HouseSize.all.each do |house_size| %>
-      <li><a href="<%= root_path(house_size: house_size.id)%>"><%= house_size.name  %></a></li>
+    <li><a href="<%= root_path(house_size: house_size.id)%>"><%= house_size.name  %></a></li>
     <% end %>
   </ul>
 </div>
 
 <!-- FILTRO ARMADO -->
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'News Cycle', sans-serif; font-size: 18px;">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
     Armado? <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
     <% HouseBuild.all.each do |house_build| %>
-      <li><a href="<%= root_path(house_build: house_build.id)%>"><%= house_build.name %></a></li>
+    <li><a href="<%= root_path(house_build: house_build.id)%>"><%= house_build.name %></a></li>
     <% end %>
   </ul>
 </div>
 
 <!-- FILTRO PRECIO -->
 <div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-family: 'News Cycle', sans-serif; font-size: 18px;">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 18px;">
     Valor Aprox <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" style="font-size: 10px;">
     <% HouseValue.all.each do |house_value| %>
-      <li><a href="<%= root_path(house_value: house_value.id)%>"><%= house_value.name  %></a></li>
+    <li><a href="<%= root_path(house_value: house_value.id)%>"><%= house_value.name  %></a></li>
     <% end %>
   </ul>
 </div>
 
 <!-- BOTON BORRAR FILTROS -->
-<a href="<%= root_path%>" style="font-family: 'News Cycle', sans-serif; font-size: 18px; position: relative; left: 52.5%;"><button type="button" class="btn btn-default btn-lg">Borrar Filtros</button></a>
+<a href="<%= root_path%>" style="font-size: 18px; position: relative; left: 52.5%;"><button type="button" class="btn btn-default btn-lg">Borrar Filtros</button></a>
 
 <br><br><br>
 
 <div style="width: 100%; height: 570px;">
-    <% @houses.each do |house| %>
-    <div class="col-sm-4 col-md-4">
-      <div class="thumbnail">
-        <%= image_tag house.photo %>
-        <div class="caption" style="font-family: 'News Cycle', sans-serif;">
-          <h3> <%= house.name %> </h3>
-          <p><h5><%= house.description %></h5></p>
-          <p><h5><%= "Tamaño: " %><%= house.mts %><%= " mts2" %></h5></p>
-          <div style="position: relative; left: 35%;">
-            <%= link_to "Ver detalles", house, class: "btn btn-default", role: "button" %>
-            </div>
+  <% @houses.each do |house| %>
+  <div class="col-sm-4 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag house.photo %>
+      <div class="caption" style="font-family: 'News Cycle', sans-serif;">
+        <h3> <%= house.name %> </h3>
+        <p><h5><%= house.description %></h5></p>
+        <p><h5><%= "Tamaño: " %><%= house.mts %><%= " mts2" %></h5></p>
+        <div style="position: relative; left: 35%;">
+          <%= link_to "Ver detalles", house, class: "btn btn-default", role: "button" %>
         </div>
       </div>
-      </div>
-    <% end %>
-    
+    </div>
+  </div>
+  <% end %>
+
 </div>

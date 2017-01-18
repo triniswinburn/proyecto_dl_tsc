@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Companies</h1>
+<h1>Empresas</h1>
+
+<br><br>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Address</th>
-      <th>Phone</th>
-      <th>Photo</th>
-      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,15 +16,11 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.name %></td>
-        <td><%= company.email %></td>
-        <td><%= company.address %></td>
-        <td><%= company.phone %></td>
-        <td><%= company.photo %></td>
-        <td><%= company.user %></td>
-        <td><%= link_to 'Show', company %></td>
-        <td><%= link_to 'Edit', edit_company_path(company) %></td>
-        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text"><%= company.name %></td>
+        <td class="text"><%= company.email %></td>
+        <td class="text"><%= link_to 'Mostrar', company %></td>
+        <td class="text"><%= link_to 'Editar', edit_company_path(company) %></td>
+        <td class="text"><%= link_to 'Borrar', company, method: :delete, data: { confirm: 'Está seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Company', new_company_path %>
+<p type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; font-size: 15px; position: relative; left: -30px;"><%= link_to 'Nueva Empresa', new_company_path %></p>

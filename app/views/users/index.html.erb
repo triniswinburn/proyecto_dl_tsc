@@ -2,14 +2,14 @@
 
 <h1>Users</h1>
 
-<table>
+<br><br>
+
+<table style="font-family: 'News Cycle', sans-serif;">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
-      <th>Photo</th>
-      <th>Fav</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,19 +17,18 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.photo %></td>
-        <td><%= user.favs %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="text"><%= user.name %></td>
+        <td class="text"><%= user.email %></td>
+        <td class="text"><%= user.phone %></td>
+        <td class="text"><%= link_to 'Mostrar', user %></td>
+        <td class="text"><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td class="text"><%= link_to 'Borrar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<p type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; font-size: 15px; position: relative; left: -30px;"><%= link_to 'Nuevo Usuario', new_user_path %></p>
