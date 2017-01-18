@@ -1,56 +1,43 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @house.name %>
-</p>
+<p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: -30px;"><a href="<%= root_path (@house) %>"><button type="button" class="btn btn-default">Atrás</button></a></p>
 
-<p>
-  <strong>Mts:</strong>
-  <%= @house.mts %>
-</p>
+<br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @house.description %>
-</p>
+<div class="container">
 
-<p>
-  <strong>Price:</strong>
-  <%= @house.price %>
-</p>
+  <table>
+    <tr>
+    <td>
+        <div style="font-family: 'News Cycle', sans-serif; font-size: 25px;">
+          <strong>DETALLES DE LA CASA</strong></div>
+        </td>
+        <th>
+        </th>
+      </tr>
+      <tr>
+        <td style="vertical-align: text-top;">
+          <p style="font-family: 'News Cycle', sans-serif; font-size: 14px;">
+            <strong>NOMBRE: </strong> <%= @house.name %>
+            <br><br>
+            <strong>TAMAÑO: </strong><%= @house.mts %> <%= "mt2" %>
+            <br><br>
+            <strong>DESCRIPCIÓN: </strong><%= @house.description %>
+            <br><br>
+            <strong>PRECIO ESTIMADO: </strong><%= "UF" %> <%= @house.price %>
+            <br><br>
+            <strong>REGIÓN: </strong><%= @house.region.name %>
+          </p></td>
+          <td>
+            <%= image_tag @house.photo %>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-<p>
-  <strong>Region:</strong>
-  <%= @house.region.name %>
-</p>
+    <% unless @quotation.any? %>
+    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 75%;"><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default btn-lg">Cotizar Casa</button></a></p>
+    <% end %>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @house.photo %>
-</p>
-
-<!-- <p>
-  <strong>Fav:</strong>
-  <%= @house.fav %>
-</p> -->
-
-<!-- <p>
-  <strong>User:</strong>
-  <%= @house.user %>
-</p>
-
-<p>
-  <strong>Company:</strong>
-  <%= @house.company %>
-</p> -->
-
-<% unless @quotation.any? %>
-<p><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default navbar-btn">Cotizar</button></a></p>
-<% end %>
-
-<p><a href="<%= root_path (@house) %>"><button type="button" class="btn btn-default navbar-btn">Back</button></a></p>
-
-
-<!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
-<!--<%= link_to 'Back', houses_path %> -->
+    <!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
+    <!--<%= link_to 'Back', houses_path %> -->

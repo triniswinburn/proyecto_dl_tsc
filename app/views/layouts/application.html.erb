@@ -14,21 +14,23 @@
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  
+  <link href="https://fonts.googleapis.com/css?family=News+Cycle" rel="stylesheet">
+  
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
   <div class="container"> 
-    <nav class="navbar navbar-default">
+    <nav>
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-          <a href="<%= root_path%>" class="navbar-brand" style="margin:15px; height: 120px;">
-            <img alt="Brand" <%= image_tag 'logo.png' %>
-            <p style="font-size: 11.5px; margin-left: 8px; margin-top: 10px; color: lightgrey;"><i>Buscador de casas pre-fabricadas</i></p>
+          <a href="<%= root_path%>" class="navbar-brand" style="margin:15px; height: 110px; background-color: white;">
+            <img alt="Brand" <%= image_tag 'logo2.png' %>
+            <!-- <p style="font-size: 11.5px; margin-left: 8px; margin-top: 10px; color: lightgrey;"><i>Buscador de casas pre-fabricadas</i></p> -->
           </a>
         </div>
 
@@ -37,30 +39,34 @@
           <ul class="nav navbar-nav navbar-right">
             <li>
               <% if user_signed_in? %>
-              <li> <%= current_user.email %> </li>
+              <li style="font-family: 'News Cycle', sans-serif; font-size: 15px; margin-top: 25px; margin-bottom: 25px; margin-right: 20px;"><%= current_user.email %> </li>
               <br>
-              <div>
-                <button type="button" class="btn btn-default"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
+              <div style="margin-right: -50px;">
+                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; margin-right: 20px;"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
               </div>
               <% else %>
-              <div  class="btn-group" role="group" aria-label="..."style="margin: 45px;">
-                <button type="button" class="btn btn-default"><%= link_to "Mi Cuenta", new_user_registration_path %></button>
+              <div  class="btn-group" role="group" aria-label="..." style="font-family: 'News Cycle', sans-serif; font-size: 15px; margin-top: 50px; margin-bottom: 25px; margin-right: 20px;">
+                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Mi Cuenta", new_user_registration_path %></button>
                 <span></span>
-                <button type="button" class="btn btn-default"><%= link_to "Registro", new_user_registration_path %></button>
+                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Registro", new_user_registration_path %></button>
               </div>
               <% end %>
             </li> 
           </ul>
         </div>
-
       </div><!-- /.container-fluid -->
     </nav>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
+    <% if notice %>
+    <p class="notice" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= notice %></p>
+    <% end %>
+    
+    <% if alert %>
+    <p class="alert" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= alert %></p>
+    <% end %>
 
     <%= yield %>
-
 
   </body>
   </html>
