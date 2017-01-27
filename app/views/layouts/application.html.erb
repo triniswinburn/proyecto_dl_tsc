@@ -21,50 +21,71 @@
 </head>
 
 <body>
-  <div class="container"> 
-    <nav>
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <a href="<%= root_path%>" class="navbar-brand" style="margin:15px; height: 110px; background-color: white;">
-            <img alt="Brand" <%= image_tag 'logo2.png' %>
-            <!-- <p style="font-size: 11.5px; margin-left: 8px; margin-top: 10px; color: lightgrey;"><i>Buscador de casas pre-fabricadas</i></p> -->
-          </a>
-        </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <% if user_signed_in? %>
-              <li class="text"><%= current_user.email %> </li>
-              <br>
-              <div style="margin-right: -50px;">
-                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; margin-right: 20px;"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
-              </div>
-              <% else %>
-              <div  class="btn-group" role="group" aria-label="..." style="font-family: 'News Cycle', sans-serif; font-size: 15px; margin-top: 50px; margin-bottom: 25px; margin-right: 20px;">
-                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Mi Cuenta", new_user_registration_path %></button>
-                <span></span>
-                <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Registro", new_user_registration_path %></button>
-              </div>
-              <% end %>
-            </li> 
-          </ul>
-        </div>
-      </div><!-- /.container-fluid -->
-    </nav>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '254513221620729',
+        xfbml      : true,
+        version    : 'v2.8'
+      });
+      FB.AppEvents.logPageView();
+    };
+
+    (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+ </script>
+
+<div class="container"> 
+
+  <nav>
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a href="<%= root_path%>" class="navbar-brand" style="margin:15px; height: 110px; background-color: white;">
+          <img alt="Brand" <%= image_tag 'logo2.png' %>
+          <!-- <p style="font-size: 11.5px; margin-left: 8px; margin-top: 10px; color: lightgrey;"><i>Buscador de casas pre-fabricadas</i></p> -->
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <% if user_signed_in? %>
+            <li class="text"><%= current_user.email %> </li>
+            <br>
+            <div style="margin-right: -50px;">
+              <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif; margin-right: 20px;"><%= link_to "Salir", destroy_user_session_path, method: :delete %></button>
+            </div>
+            <% else %>
+            <div  class="btn-group" role="group" aria-label="..." style="font-family: 'News Cycle', sans-serif; font-size: 15px; margin-top: 50px; margin-bottom: 25px; margin-right: 20px;">
+              <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Mi Cuenta", new_user_registration_path %></button>
+              <span></span>
+              <button type="button" class="btn btn-default" style="font-family: 'News Cycle', sans-serif;"><%= link_to "Registro", new_user_registration_path %></button>
+            </div>
+            <% end %>
+          </li> 
+        </ul>
+      </div>
+    </div><!-- /.container-fluid -->
+  </nav>
 
 
-    <% if notice %>
-    <p class="notice" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= notice %></p>
-    <% end %>
-    
-    <% if alert %>
-    <p class="alert" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= alert %></p>
-    <% end %>
+  <% if notice %>
+  <p class="notice" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= notice %></p>
+  <% end %>
+  
+  <% if alert %>
+  <p class="alert" style="font-family: 'News Cycle', sans-serif; font-size: 15px; color: peru;"><%= alert %></p>
+  <% end %>
 
-    <%= yield %>
+  <%= yield %>
 
-  </body>
-  </html>
+</body>
+</html>

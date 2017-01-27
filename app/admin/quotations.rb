@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Quotation do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -12,28 +12,28 @@ ActiveAdmin.register User do
 # end
 
 	index do
-		 column :id
-		 column :name
-		 column :email
-		 column :photo
+		 column :subject
+		 column :message
+		 column :user_id
+		 column :house_id
 		 column :created_at
 		 actions
 	end
 
-	filter :email
-	filter :name
-	filter :id
+	filter :user
+	filter :house
 
 	form do |f|
 		inputs "NUEVO USER" do
-			input :name
-			input :email
-			input :password
-			input :photo
+			input :subject
+			input :message
+			input :user
+			input :house
 		end
 		actions
 	end
 
-permit_params :name, :email, :password, :id, :photo
+
+permit_params :subject, :email, :message, :user_id, :house_id
 
 end

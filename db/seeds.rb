@@ -40,10 +40,10 @@ users = User.create!(
 
 companies = Company.create!(
 	[
-		{ name: 'company1', email: 'company1@gmail.com', address: 'direccion company 1', phone: '+562 2233 4452', photo: 'foto company 1', user: users.first }, 
-		{ name: 'company2', email: 'company2@gmail.com', address: 'direccion company 2', phone: '+562 1245 4452', photo: 'foto company 2', user: users.first },
-		{ name: 'company3', email: 'company3@gmail.com', address: 'direccion company 3', phone: '+562 2233 7443', photo: 'foto company 3', user: users.first },
-		{ name: 'company4', email: 'company4@gmail.com', address: 'direccion company 4', phone: '+562 8374 6652', photo: 'foto company 4', user: users.last }
+		{ name: 'company1', email: 'company1@gmail.com', address: 'direccion company 1', phone: '5622', photo: 'foto company 1', user: users.first }, 
+		{ name: 'company2', email: 'company2@gmail.com', address: 'direccion company 2', phone: '5621', photo: 'foto company 2', user: users.first },
+		{ name: 'company3', email: 'company3@gmail.com', address: 'direccion company 3', phone: '5622', photo: 'foto company 3', user: users.first },
+		{ name: 'company4', email: 'company4@gmail.com', address: 'direccion company 4', phone: '5628', photo: 'foto company 4', user: users.last }
 	]
 )
 
@@ -100,11 +100,20 @@ housevalue = HouseValue.create!(
 	]
 )
 
+
 houses = House.create!(
 	[
-		{name: "casa1", mts: "24mt2", user: users.first, company: companies.first, region: regions.first },
-		{name: "casa2", mts: "30mt2", user: users.first, company: companies.first, region: regions.first },
-		{name: "casa3", mts: "50mt2", user: users.first, company: companies.first, region: regions.last },
+		{name: "CASA ARAUCO", mts: "58mt2", user: users.first, company: companies.first, region: regions.first },
+		{name: "CASA SAKURA", mts: "74mt2", user: users.first, company: companies.first, region: regions.first },
+		{name: "CASA YURTA", mts: "84mt2", user: users.first, company: companies.first, region: regions.last },
 	]
 )
 
+
+quotations = Quotation.create!(
+	[
+		{subject: "Cotización 1", message: "contenido cotizacion 1", user: users.first, house: houses.first },
+		{subject: "Cotización 2", message: "contenido cotizacion 2", user: users.first, house: houses.first },
+		{subject: "Cotización 3", message: "contenido cotizacion 3", user: users.last, house: houses.last },
+	]
+)

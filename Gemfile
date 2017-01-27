@@ -52,11 +52,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'omniauth'
+gem 'omniauth-facebook'
 gem 'cancancan'
 gem 'railroady'
 gem 'fog'
+gem "pry-byebug"
 gem "better_errors"
 gem "binding_of_caller"
+gem 'active_skin'
 # gem 'dotenv-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

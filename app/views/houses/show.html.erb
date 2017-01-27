@@ -29,6 +29,7 @@
             <strong>REGIÓN: </strong><%= @house.region.name %>
           </p></td>
           <td>
+          <br>
             <%= image_tag @house.photo %>
           </td>
         </tr>
@@ -36,8 +37,17 @@
     </div>
 
     <% unless @quotation.any? %>
-    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 75%;"><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default btn-lg">Cotizar Casa</button></a></p>
+    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 72%; display: inline;"><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default btn-lg">Cotizar Casa</button></a></p>
     <% end %>
+
+    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 67%; display: inline;"><a href="<%= house_path (@house) %>""><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button></a></p>
+    <br><br>
+<!--     <div
+    class="fb-like"
+    data-share="true"
+    data-width="450"
+    data-show-faces="true">
+  </div> -->
 
     <!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
     <!--<%= link_to 'Back', houses_path %> -->

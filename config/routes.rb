@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
-        registrations: 'users/registrations'
-      }
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
 
   root to: 'public#index'
 
@@ -9,19 +10,17 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   
   resources :houses do
-      resources :quotations
-    end
-    
-  resources :companies
+    resources :quotations
+  end
 
-  resources :users
+  resources :companies, :only => [:read]
+
+  resources :users, :only => [:read]
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 
-
-# crud
-
+# CRUD
 # create
 # read
 # update

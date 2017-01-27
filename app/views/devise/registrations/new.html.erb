@@ -1,62 +1,72 @@
-<h2>Registro</h2>
+<div class="container2"><h2>Registro</h2>
 
-<br><br>
+  <br><br>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field" style="font-size: 18px;">
-    <%= f.label :name, 'Nombre' %><br />
-    <%= f.text_field :name, autofocus: true %>
+
+  <table class="field" style="font-size: 18px; width:50%">
+    <tr>
+      <td class="form"><%= f.label :name, 'Nombre' %></td>
+      <td class="form"><%= f.text_field :name, autofocus: true %>
+      </tr>
+      <tr>
+        <td class="form"><%= f.label :email, 'Email' %></td>
+        <td class="form"><%= f.email_field :email %></td> 
+      </tr>
+      <tr>
+        <td class="form"><%= f.label :password, 'Contraseña' %><% if @minimum_password_length %>
+      <h5>(<%= @minimum_password_length %> caracteres mínimo)</h5></td>
+        <td class="form">
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %></td> 
+      </tr>
+      <tr>
+        <td class="form"><%= f.label :password_confirmation , 'Confirmar Contraseña' %></td>
+        <td class="form"><%= f.password_field :password_confirmation, autocomplete: "off" %></td> 
+      </tr>
+
+
+    </table>
+
+
+<!--     <div class="field" style="font-size: 18px;">
+      <%= f.label :name, 'Nombre' %><br />
+      <%= f.text_field :name, autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class="field" style="font-size: 18px;">
+      <%= f.label :email, 'Email' %><br />
+      <%= f.email_field :email %>
+    </div> -->
+
+
+<!--     <br>
+
+    <div class="field" style="font-size: 18px;">
+      <%= f.label :password, 'Contraseña' %>
+      <% if @minimum_password_length %>
+      <h5>(<%= @minimum_password_length %> mínimo 6 caracteres)</h5>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div> -->
+<!-- 
+    <br>
+
+    <div class="field" style="font-size: 18px;">
+      <%= f.label :password_confirmation , 'Confirmar Contraseña' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div> -->
+
+    <br><br>
+
+    <div class="actions" style="font-size: 18px;">
+      <%= f.submit "Registrar" %>
+    </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <br>
-
-  <div class="field" style="font-size: 18px;">
-    <%= f.label :email, 'Email' %><br />
-    <%= f.email_field :email %>
-  </div>
-
-<!--   <div class="field">
-    <%= f.label :phone, 'Teléfono (solo números)' %><br />
-    <%= f.text_field :phone %>
-  </div> -->
-
-<!--   <div class="field">
-    <%= f.label :photo %>
-    <%= f.text_field :photo %>
-  </div> -->
-  <!-- <br>
-  <%= form_for @user, html: { multipart: true } do |f| %>
-   <label>Foto</label>
-   <%= f.file_field :photo %>
-   <%= f.hidden_field :photo_cache %>
-   <%= image_tag(@user.photo) if @user.photo? %>
-  <% end %>
-  <br> -->
-
-<br>
-
-  <div class="field" style="font-size: 18px;">
-    <%= f.label :password, 'Contraseña' %>
-    <% if @minimum_password_length %>
-    <h5>(<%= @minimum_password_length %> mínimo 6 caracteres)</h5>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-<br>
-
-  <div class="field" style="font-size: 18px;">
-    <%= f.label :password_confirmation , 'Confirmar Contraseña' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-<br>
-
-  <div class="actions" style="font-size: 18px;">
-    <%= f.submit "Registrar" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
