@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: -30px;"><a href="<%= root_path (@house) %>"><button type="button" class="btn btn-default">Atrás</button></a></p>
+<p class="back"><a href="<%= root_path (@house) %>"><button type="button" class="btn btn-default">Atrás</button></a></p>
 
 <br>
 
@@ -8,39 +8,41 @@
 
   <table>
     <tr>
-    <td>
-        <div style="font-family: 'News Cycle', sans-serif; font-size: 25px;">
+      <td>
+        <div class="title">
+          <br>
           <strong>DETALLES DE LA CASA</strong></div>
+          <br>
         </td>
         <th>
         </th>
       </tr>
       <tr>
-        <td style="vertical-align: text-top;">
-          <p style="font-family: 'News Cycle', sans-serif; font-size: 14px;">
-            <strong>NOMBRE: </strong> <%= @house.name %>
+        <td>
+          <p class="form">
+            <%= @house.name %>
             <br><br>
-            <strong>TAMAÑO: </strong><%= @house.mts %> <%= "mt2" %>
+            <%= @house.mts %> <%= "mt2" %>
             <br><br>
-            <strong>DESCRIPCIÓN: </strong><%= @house.description %>
+            <%= @house.description %>
             <br><br>
-            <strong>PRECIO ESTIMADO: </strong><%= "UF" %> <%= @house.price %>
+            <%= "UF" %> <%= @house.price %>
             <br><br>
-            <strong>REGIÓN: </strong><%= @house.region.name %>
+            <%= @house.region.name %>
           </p></td>
           <td>
-          <br>
+            <br>
             <%= image_tag @house.photo %>
           </td>
         </tr>
       </table>
     </div>
-
+    <br>
     <% unless @quotation.any? %>
-    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 72%; display: inline;"><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default btn-lg">Cotizar Casa</button></a></p>
+    <p class="cotizar"><a href="<%= new_house_quotation_path (@house) %>"><button type="button" class="btn btn-default btn-lg">Cotizar Casa</button></a></p>
     <% end %>
 
-    <p style="font-family: 'News Cycle', sans-serif; font-size: 20px; position: relative; left: 67%; display: inline;"><a href="<%= house_path (@house) %>""><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button></a></p>
+    <p class="cotizar" style="left: 67%;"><a href="<%= house_path (@house) %>""><button type="button" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></button></a></p>
     <br><br>
 <!--     <div
     class="fb-like"
@@ -49,5 +51,5 @@
     data-show-faces="true">
   </div> -->
 
-    <!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
+  <!-- <%= link_to 'Edit', edit_house_path(@house) %> | -->
     <!--<%= link_to 'Back', houses_path %> -->

@@ -4,7 +4,6 @@ body {
 	font-size: 15px;
 }
 
-
 .text {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 15px;
@@ -13,20 +12,78 @@ body {
 	margin-right: 20px;
 }
 
-
 a:hover { 
-    background-color: orange;
+    background-color: white;
     text-decoration: none;
+    color:black;
+    opacity: 0.5;
 }
-
 
 div.container2 {
 	margin-left: 30%;
 }
 
-
 .form {
 	font-size: 18px;
 	font-family: 'News Cycle', sans-serif;
+	width:80%;
+}
+
+.title{
+	font-size: 25px;
+	font-family: 'News Cycle', sans-serif;
 	width:100%;
+}
+
+.back {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 20px;
+	position: relative;
+	left: -30px;"
+}
+
+.cotizar {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 20px;
+	position: relative;
+	left: 72%;
+	display: inline;
+}
+
+.navbar-brand {
+	margin:15px;
+	height: 110px;
+	background-color: white;
+}
+
+.btn-default {
+	font-family: 'News Cycle', sans-serif;
+}
+
+.btn-group2 {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 15px;
+	margin-top: 50px;
+	margin-bottom: 25px;
+	margin-right: 20px;
+}
+
+.notice {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 15px;
+	color: peru;
+}
+
+.alert {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 15px;
+	color: peru;
+}
+
+.dropdown-toggle {
+	font-size: 18px;
+}
+
+.dropdown-menu {
+	font-size: 10px;
 }

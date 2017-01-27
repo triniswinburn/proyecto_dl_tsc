@@ -60,6 +60,7 @@ gem "pry-byebug"
 gem "better_errors"
 gem "binding_of_caller"
 gem 'active_skin'
+gem 'cloudflare'
 # gem 'dotenv-rails'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'

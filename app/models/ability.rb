@@ -3,14 +3,22 @@ class Ability
 
     def initialize(user)
         user ||= User.new(role: 3)
+
         if user.admin?
             can :manage, :all
         elsif user.seller?
-            can :manage, :all
+            can :read, :all
+            can :create, 
+            can :update, [Quotation, House], user_id: user_id
+        elsif user.user?
+            can :read, :all
+            can :create, [Quotation]
+            can [:update, :destroy], [Quotation], user_id: user_id
         else
             can :read, :all
         end
-            
+  end
+end
 
 
 
@@ -40,5 +48,4 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-  end
-end
+
