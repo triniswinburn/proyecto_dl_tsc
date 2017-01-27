@@ -8,7 +8,7 @@ class Ability
             can :manage, :all
         elsif user.seller?
             can :read, :all
-            can :create, 
+            can :create
             can :update, [Quotation, House], user_id: user_id
         elsif user.user?
             can :read, :all
