@@ -17,6 +17,7 @@ ActiveAdmin.register Quotation do
 		 column :user_id
 		 column :house_id
 		 column :created_at
+		 column :updated_at
 		 actions
 	end
 
@@ -34,6 +35,6 @@ ActiveAdmin.register Quotation do
 	end
 
 
-permit_params :subject, :email, :message, :user_id, :house_id
+permit_params :subject, :email, :message, :user_id, :house_id, :company_id
 
 end

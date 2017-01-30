@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :sellers
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -13,17 +14,21 @@ Rails.application.routes.draw do
     resources :quotations
   end
 
-  resources :companies, :only => [:read]
+  resources :companies
 
-  resources :users, :only => [:read]
+  resources :quotations
+
+  resources :users
+
+  resources :houses do
+    resources :fav_house, :only => [:create]
+  end
 
 end
+
 
 # CRUD
 # create
 # read
 # update
 # destroy
-
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -15,6 +15,7 @@ ActiveAdmin.register Company do
 index do
 	column :user
 	column :name
+	column :id
 	column :email
 	column :address
 	column :photo

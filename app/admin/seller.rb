@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Seller do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,9 +13,11 @@ ActiveAdmin.register User do
 
 	index do
 		 column :id
+		 column :company
 		 column :name
 		 column :email
-		 column :fav
+		 column :phone
+		 column :photo
 		 column :created_at
 		 column :updated_at
 		 actions
@@ -29,11 +31,13 @@ ActiveAdmin.register User do
 		inputs "NUEVO USER" do
 			input :name
 			input :email
+			input :phone
+			input :photo
 			input :password
 		end
 		actions
 	end
 
-permit_params :name, :email, :password, :id, :photo, :fav
+permit_params :name, :email, :phone, :photo, :company, :company_id, :password
 
 end

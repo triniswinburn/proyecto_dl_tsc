@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre:</strong>
   <%= @company.name %>
 </p>
 
@@ -11,24 +9,18 @@
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>Dirección:</strong>
   <%= @company.address %>
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @company.phone %>
+  <strong>ID Usuario:</strong>
+  <%= @company.user_id   %>
 </p>
 
 <p>
-  <strong>Photo:</strong>
-  <%= @company.photo %>
+  <strong>Usuario:</strong>
+  <%= @company.user.name   %>
 </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @company.user %>
-</p>
-
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<button type="button" class="btn btn-default" style="margin-right: 20px;"><%= link_to 'Atrás', companies_path %></button>

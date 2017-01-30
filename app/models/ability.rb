@@ -12,8 +12,8 @@ class Ability
             can :update, [Quotation, House], user_id: user_id
         elsif user.user?
             can :read, :all
-            can :create, [Quotation]
-            can [:update, :destroy], [Quotation], user_id: user_id
+            can :create, Quotation
+            can [:update, :destroy], Quotation, user_id: user_id
         else
             can :read, :all
         end

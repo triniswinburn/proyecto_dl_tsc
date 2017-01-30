@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :favs
   has_many :houses
   has_many :companies
-  has_many :quotations
+  has_many :quotations, through: :houses
 
   has_many :fav_houses
   has_many :favs, through: :fav_houses

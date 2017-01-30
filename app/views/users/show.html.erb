@@ -11,19 +11,12 @@
 </p>
 
 <p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
+  <strong>ID Casas Favoritas:</strong>
+  <% @fav.each do |favorito| %>
+  <%= favorito.house_id %>,
+  <% end %>
 </p>
 
-<p>
-  <strong>Photo:</strong>
-  <%= @user.photo %>
-</p>
 
-<p>
-  <strong>Fav:</strong>
-  <%= @user.fav %>
-</p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<button type="button" class="btn btn-default" style="margin-right: 20px;"><%= link_to 'Atrás', users_path %></button>

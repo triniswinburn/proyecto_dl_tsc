@@ -46,7 +46,15 @@ div.container2 {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 20px;
 	position: relative;
-	left: 72%;
+	left: 69%;
+	display: inline;
+}
+
+.favorita {
+	font-family: 'News Cycle', sans-serif;
+	font-size: 20px;
+	position: relative;
+	left: 64%;
 	display: inline;
 }
 
@@ -71,13 +79,13 @@ div.container2 {
 .notice {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 15px;
-	color: peru;
+	color: #5bc0de;
 }
 
 .alert {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 15px;
-	color: peru;
+	color: #5bc0de;
 }
 
 .dropdown-toggle {
@@ -104,4 +112,9 @@ textarea#quotation_message {
 .actions {
 	font-family: 'News Cycle', sans-serif;
 	font-size: 15px;
+}
+
+a.btn.btn-lg.btn-info {
+	color: white;
+    background-color: #5bc0de;    
 }
