@@ -20,14 +20,6 @@ users = User.create!(
 	]
 )
 
-sellers = Seller.create!(
-	[
-		{ name: 'seller1', email: "seller1@gmail.com", company: companies.first, house: houses.first },
-		{ name: 'seller2', email: "seller2@gmail.com", company: companies.first, house: houses.first },
-		{ name: 'seller3', email: "seller3@gmail.com", company: companies.last, house: houses.last }
-	]
-)
-
 companies = Company.create!(
 	[
 		{ name: 'company1', email: 'company1@gmail.com', address: 'direccion company 1', phone: '5622', photo: 'foto company 1', user: users.first }, 
@@ -94,6 +86,14 @@ houses = House.create!(
 ", price: 650 },
 		{name: "CASA YURTA", mts: "84mt2", user: users.first, company: companies.first, region: regions.last, description: "Casa modular prefabricada, construida en pino insigne nacional de exportación, cumple con norma europea en altura de paneles a 2,44 mts.
 ", price: 850 },
+	]
+)
+
+sellers = Seller.create!(
+	[
+		{ name: 'seller1', email: "seller1@gmail.com", password: "12345678", company: companies.first, house: houses.first },
+		{ name: 'seller2', email: "seller2@gmail.com", password: "12345678", company: companies.first, house: houses.first },
+		{ name: 'seller3', email: "seller3@gmail.com", password: "12345678", company: companies.last, house: houses.last }
 	]
 )
 

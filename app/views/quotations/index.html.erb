@@ -11,7 +11,7 @@
       <th></th><th></th><th></th><th></th>
       <th>Usuario</th>
       <th></th><th></th><th></th><th></th>
-      <th style="background-color: #5bc0de; padding: 10px;"">Email</th>
+      <th style="background-color: #5bc0de; border-radius: 5px; padding: 10px;"">Email</th>
       <th></th><th></th><th></th><th></th>
       <th>House_id</th>
       <th></th><th></th><th></th><th></th>
@@ -35,10 +35,8 @@
       <td></td><td></td><td></td><td></td>
       <td class="text"><%= quotation.user.name %></td>
       <td></td><td></td><td></td><td></td>
-      <td class="text" style="background-color: #cccccc; padding: 10px; width: 170px;">
-
-        <a href="mailto:<%= quotation.user.email  %>" ><%= quotation.user.email  %></a>
-
+      <td class="text" style="background-color: #cccccc; border-radius: 5px; padding: 10px; width: 170px;">
+      <a href="mailto:<%= quotation.user.email  %>" ><%= quotation.user.email  %></a>&nbsp;&nbsp;
         <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
       </td>
       <td></td><td></td><td></td><td></td>
@@ -48,6 +46,11 @@
       <td></td><td></td><td></td><td></td>
       <td class="text"><%= quotation.message %></td>
       <td></td><td></td><td></td><td></td>
+      <thead>
+        <tr>
+          <th></th>
+        </tr>
+      </thead>
       <!--       <td class="text"><button type="button" class="btn btn-default" style="margin-right: 20px;"><%= link_to 'Responder', quotation %></button></td> -->
     </tr>
     <% end %>
