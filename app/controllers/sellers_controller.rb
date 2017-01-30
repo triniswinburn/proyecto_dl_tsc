@@ -4,7 +4,7 @@ class SellersController < InheritedResources::Base
   private
 
     def seller_params
-      params.require(:seller).permit(:name, :email, :phone, :photo, :password)
+      params.require(:seller).permit(:name, :email, :phone, :photo)
     end
 end
 

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sellers
+  
   devise_for :users, controllers: {
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   resources :quotations
 
   resources :users
+
+  resources :sellers
 
   resources :houses do
     resources :fav_house, :only => [:create]

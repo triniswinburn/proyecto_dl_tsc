@@ -1,24 +1,7 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-# CREAR SEEDS PARA:
-# company (1)
-# company_admin (1)
-# company_user (4)
-# logged_user (4)
-# users
-# houses (16)
 
 AdminUser.destroy_all
 
-
 AdminUser.create!(email: 'trini.swinburn@gmail.com', password: '12345678', password_confirmation: '12345678')
-
 
 House.destroy_all
 Region.destroy_all
@@ -27,7 +10,7 @@ Company.destroy_all
 User.destroy_all
 HouseValue.destroy_all
 HouseBuild.destroy_all
-
+Seller.destroy_all
 
 users = User.create!(
 	[
@@ -37,15 +20,13 @@ users = User.create!(
 	]
 )
 
-
-# sellers = Seller.create!(
-# 	[
-# 		{ name: 'seller1', email: "seller1@gmail.com", company: companies.first, house: houses.first },
-# 		{ name: 'seller2', email: "seller2@gmail.com", company: companies.first, house: houses.first },
-# 		{ name: 'seller3', email: "seller3@gmail.com", company: companies.last, house: houses.last }
-# 	]
-# )
-
+sellers = Seller.create!(
+	[
+		{ name: 'seller1', email: "seller1@gmail.com", company: companies.first, house: houses.first },
+		{ name: 'seller2', email: "seller2@gmail.com", company: companies.first, house: houses.first },
+		{ name: 'seller3', email: "seller3@gmail.com", company: companies.last, house: houses.last }
+	]
+)
 
 companies = Company.create!(
 	[
@@ -55,7 +36,6 @@ companies = Company.create!(
 		{ name: 'company4', email: 'company4@gmail.com', address: 'direccion company 4', phone: '5628', photo: 'foto company 4', user: users.last }
 	]
 )
-
 
 regions = Region.create!(
 	[
@@ -77,7 +57,6 @@ regions = Region.create!(
 	]
 )
 
-
 housesize = HouseSize.create!(
 	[
 		{from: 1, to: 25, name: "Hasta 25 mts2"},
@@ -89,14 +68,12 @@ housesize = HouseSize.create!(
 	]
 )
 
-
 housebuild = HouseBuild.create!(
 	[
 		{name: "Si"},
 		{name: "No"}
 	]
 )
-
 
 housevalue = HouseValue.create!(
 	[
@@ -109,7 +86,6 @@ housevalue = HouseValue.create!(
 	]
 )
 
-
 houses = House.create!(
 	[
 		{name: "CASA ARAUCO", mts: "58mt2", user: users.first, company: companies.first, region: regions.first, description: "Casa modular prefabricada, construida en pino insigne nacional de exportación, cumple con norma europea en altura de paneles a 2,44 mts.
@@ -120,7 +96,6 @@ houses = House.create!(
 ", price: 850 },
 	]
 )
-
 
 quotations = Quotation.create!(
 	[
