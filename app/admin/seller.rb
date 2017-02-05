@@ -16,8 +16,6 @@ ActiveAdmin.register Seller do
 		 column :company
 		 column :name
 		 column :email
-		 column :phone
-		 column :photo
 		 column :created_at
 		 column :updated_at
 		 actions
@@ -31,8 +29,6 @@ ActiveAdmin.register Seller do
 		inputs "NUEVO USER" do
 			input :name
 			input :email
-			input :phone
-			input :photo
 			input :password
 		end
 		actions
